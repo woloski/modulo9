@@ -71,6 +71,7 @@ io.sockets.on('connection', function (socket) {
   });
 });
 
-server.listen(8001, function(){
-  console.log('listening in http://localhost:8001');
+var port = process.env.port || 8001;
+server.listen(port, function(){
+  console.log('listening in ' + port);
 });
