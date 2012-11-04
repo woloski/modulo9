@@ -12,6 +12,7 @@ app.configure(function(){
 });
 
 io.configure(function(){
+  console.log('set to long polling');
   io.set('transports', ['xhr-polling']);
   io.set("polling duration", 10); 
 });
