@@ -11,7 +11,7 @@ app.configure(function(){
   this.use(express.bodyParser());
 });
 
-io.configure('production', function(){
+io.configure(function(){
   io.set('transports', ['xhr-polling']);
   io.set("polling duration", 10); 
 });
