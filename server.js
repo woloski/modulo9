@@ -11,6 +11,11 @@ app.configure(function(){
   this.use(express.bodyParser());
 });
 
+io.configure('production', function(){
+  io.set('transports', ['xhr-polling']);
+  io.set("polling duration", 10); 
+});
+
 //middleware para mapear todos los parametros movieId
 app.param('movieId', function(request, response, next, movieId){
   movies.getById(request.params.movieId, function (err, movie) {
